@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Для тебя</title>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  body {
+    background-color: #5a2a83;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    padding: 40px 20px;
+    color: #f3e9f5;
+    overflow-x: hidden;
+  }
+  h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3em;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 5px #8c5acc;
+    position: relative;
+    z-index: 10;
+  }
+  footer {
+    margin-top: 40px;
+    font-style: italic;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 1.2em;
+    color: #d1b3e8;
+    position: relative;
+    z-index: 10;
+  }
+  .btn {
+    margin-top: 35px;
+    padding: 15px 40px;
+    background-color: #8c5acc;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.3em;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(140, 90, 204, 0.6);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    z-index: 10;
+    position: relative;
+  }
+  .btn:hover {
+    background-color: #a078df;
+    box-shadow: 0 8px 20px rgba(160, 120, 223, 0.8);
+  }
+
+  #collage {
+    width: 320px;
+    height: 290px;
+    margin: 40px auto 0;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 4px;
+    clip-path: polygon(
+      50% 0%,
+      80% 20%,
+      100% 50%,
+      80% 80%,
+      50% 100%,
+      20% 80%,
+      0% 50%,
+      20% 20%
+    );
+    opacity: 0;
+    visibility: hidden;
+    transition: all 1s ease;
+  }
+  #collage.show {
+    opacity: 1;
+    visibility: visible;
+  }
+  #collage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(140, 90, 204, 0.5);
+  }
+</style>
+</head>
+<body>
+
+  <h1>Я тебя бесконечно люблю,<br>сегодня, завтра и навсегда.</h1>
+  <footer>От Вселенной, Галактике.</footer>
+  
+  <button class="btn" id="showCollageBtn">Нажми меня</button>
+
+  <div id="collage">
+    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcU..." alt="Фото 1" />
+    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcU..." alt="Фото 2" />
+    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcU..." alt="Фото 3" />
+    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcU..." alt="Фото 4" />
+    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcU..." alt="Фото 5" />
+  </div>
+
+  <script>
+    document.getElementById('showCollageBtn').addEventListener('click', function() {
+      document.getElementById('collage').classList.add('show');
+      this.style.display = 'none';
+    });
+  </script>
+
+</body>
+</html>
